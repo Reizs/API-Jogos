@@ -1,0 +1,14 @@
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  const supabase = supabase.createClient(
+    'SUA_SUPABASE_URL',
+    'SUA_SUPABASE_ANON_KEY'
+  )
+
+  async function testar() {
+    const { data, error } = await supabase.from('jogos').select('*')
+    console.log(data, error)
+  }
+
+  testar()
+</script>
